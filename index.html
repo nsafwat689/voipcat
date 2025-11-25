@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>VoIP Cat – Premium VoIP Services & Cloud PBX for Global Businesses</title>
+    <meta name="description" content="VoIP Cat offers affordable, high-quality VoIP services, Cloud PBX, international calling, and virtual phone numbers for businesses worldwide. 99.9% uptime, 24/7 support.">
+    <meta name="keywords" content="VoIP services, cloud PBX, business phone system, international calling, cheap VoIP, SIP trunking, virtual phone number, call center VoIP, HD voice calls, global telephony, VoIP provider, VoIP for business, low-cost calls, VoIP solutions">
+    <meta name="author" content="VoIP Cat">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.voipcat.com/">
+    <meta property="og:title" content="VoIP Cat – Reliable VoIP & Cloud PBX Solutions">
+    <meta property="og:description" content="Global VoIP provider with crystal-clear calls, scalable Cloud PBX, and 24/7 support. Save up to 70% on communication costs.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.voipcat.com/">
+    <meta property="twitter:title" content="VoIP Cat – Best VoIP Services for Global Teams">
+    <meta property="twitter:description" content="Affordable, secure, and scalable VoIP solutions for startups to enterprises. Try our Cloud PBX today!">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📞</text></svg>">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --baby-blue: #e6f0ff;
+            --light-blue: #3b82f6;
+            --white: #ffffff;
+            --dark-blue: #1e40af;
+            --gray: #f3f4f6;
+            --chat-bg: rgba(30, 58, 138, 0.98);
+            --chat-bubble-user: #3b82f6;
+            --chat-bubble-agent: #e2e8f0;
+            --whatsapp-green: #25D366;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--white);
+            color: #333;
+            overflow-x: hidden;
+        }
+        /* Background Animation */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(59, 130, 246, 0.1);
+            animation: float 15s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* Header */
+        header {
+            background: rgba(30, 58, 138, 0.95);
+            color: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .logo i {
+            color: var(--baby-blue);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a:hover {
+            color: var(--baby-blue);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--baby-blue);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        /* Hero Section */
+        .hero {
+            padding: 12rem 5% 5rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: floatImage 6s ease-in-out infinite;
+        }
+        @keyframes floatImage {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        .btn {
+            display: inline-block;
+            background: var(--baby-blue);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--baby-blue);
+        }
+        .btn:hover {
+            background: transparent;
+            color: var(--baby-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--baby-blue);
+            margin-left: 1rem;
+        }
+        .btn-outline:hover {
+            background: var(--baby-blue);
+            color: var(--primary-blue);
+        }
+        /* Section Styles */
+        section {
+            padding: 5rem 5%;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h3 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .stat-item {
+            background: var(--baby-blue);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        /* Cloud PBX Section */
+        .cloud-pbx {
+            background-color: var(--gray);
+        }
+        .pbx-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .pbx-plan-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .pbx-plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .pbx-plan-header {
+            margin-bottom: 1.5rem;
+        }
+        .pbx-plan-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        .pbx-plan-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+        .pbx-plan-price span {
+            font-size: 1rem;
+            color: #666;
+        }
+        .pbx-plan-button {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin: 1.5rem 0 1rem;
+        }
+        .pbx-plan-button:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .pbx-plan-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .pbx-plan-concurrent {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        .pbx-plan-annual {
+            font-size: 0.9rem;
+            color: var(--light-blue);
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+        /* Plans Section */
+        .plans {
+            background-color: var(--gray);
+        }
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .plan-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        .plan-card.standard {
+            border-top: 5px solid #FFD700;
+        }
+        .plan-card.premium {
+            border-top: 5px solid #B9F2FF;
+        }
+        .plan-card.platinum {
+            border-top: 5px solid #E5E4E2;
+        }
+        .plan-card.platinum::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--light-blue);
+            color: var(--white);
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .plan-header {
+            margin-bottom: 2rem;
+        }
+        .plan-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+        .plan-price span {
+            font-size: 1rem;
+            color: #666;
+        }
+        .plan-features {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .plan-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        .plan-features li i {
+            color: var(--light-blue);
+            margin-right: 10px;
+        }
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--baby-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary-blue);
+            font-size: 2rem;
+        }
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+        }
+        .testimonials .section-title h2,
+        .testimonials .section-title p {
+            color: var(--white);
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+        .client-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--baby-blue);
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--baby-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 5% 1.5rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-column h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--baby-blue);
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: var(--baby-blue);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+        }
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            width: 350px;
+            max-height: 500px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .chat-header {
+            background: var(--chat-bg);
+            color: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .chat-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .chat-header i {
+            font-size: 1.2rem;
+        }
+        .chat-messages {
+            background: #f8fafc;
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+        }
+        .chat-input-area {
+            background: white;
+            padding: 12px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .chat-input {
+            width: 100%;
+            padding: 10px 16px;
+            border: 1px solid #cbd5e1;
+            border-radius: 24px;
+            outline: none;
+            font-size: 0.95rem;
+        }
+        .chat-input:focus {
+            border-color: var(--light-blue);
+        }
+        .chat-bubble {
+            margin-bottom: 12px;
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 18px;
+            line-height: 1.4;
+            position: relative;
+            word-wrap: break-word;
+        }
+        .chat-bubble.agent {
+            background: var(--chat-bubble-agent);
+            color: #1e293b;
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+        .chat-bubble.user {
+            background: var(--chat-bubble-user);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            margin-left: auto;
+        }
+        .chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+            z-index: 10000;
+            transition: all 0.3s;
+        }
+        .chat-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.5);
+        }
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 90px;
+            right: 20px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+            z-index: 9999;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(12deg);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.7);
+        }
+        /* Chat Option Buttons */
+        .chat-option-btn {
+            display: block;
+            background: var(--baby-blue);
+            color: var(--primary-blue);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 16px;
+            margin: 6px 0;
+            text-align: left;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            width: 90%;
+            max-width: 300px;
+        }
+        .chat-option-btn:hover {
+            background: #d1e4ff;
+            transform: translateX(4px);
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-text { display: flex; flex-direction: column; align-items: center; }
+            .about-content { flex-direction: column; }
+            .chat-widget { width: 320px; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 2.5rem; }
+            section { padding: 3rem 5%; }
+            .chat-widget { width: 100%; max-width: 100%; bottom: 150px; right: 0; border-radius: 0; }
+            .whatsapp-float { bottom: 160px; }
+            .chat-toggle { bottom: 90px; }
+        }
+        @media (max-width: 480px) {
+            .chat-widget { width: 100vw; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="background-animation" id="background-animation"></div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-cat"></i>
+                <span>VoIP Cat</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#cloud-pbx">Cloud PBX</a>
+                <a href="#plans">Plans</a>
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Global VoIP Solutions for the Modern World</h1>
+                <p>With over 10 years of experience, VoIP Cat provides reliable, high-quality voice communication services to every country worldwide at unbeatable prices.</p>
+                <div class="hero-buttons">
+                    <a href="#plans" class="btn">Choose Your Plan</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="VoIP Technology and Communication Services">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About VoIP Cat</h2>
+                <p>Trusted by businesses worldwide for over a decade</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>10+ Years of Excellence in VoIP Services</h3>
+                    <p>Since 2015, VoIP Cat has been at the forefront of voice communication technology, providing businesses and individuals with reliable, crystal-clear voice services across the globe.</p>
+                    <p>Our mission is to deliver premium VoIP solutions at affordable prices without compromising on quality. With our robust infrastructure and dedicated support team, we ensure seamless communication for all our clients.</p>
+                    <p>Operating in over 190 countries, we understand the unique communication needs of different regions and tailor our services accordingly.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <h4>10+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>190+</h4>
+                            <p>Countries Served</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>99.9%</h4>
+                            <p>Uptime Guarantee</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>24/7</h4>
+                            <p>Support Available</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="VoIP Cat Team and Office">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud PBX Section -->
+    <section id="cloud-pbx" class="cloud-pbx">
+        <div class="container">
+            <div class="section-title">
+                <h2>Cloud PBX Solutions</h2>
+                <p>Scalable business phone systems for every size organization</p>
+            </div>
+            <div class="pbx-plans">
+                <div class="pbx-plan-card">
+                    <div class="pbx-plan-header">
+                        <div class="pbx-plan-name">Small</div>
+                        <div class="pbx-plan-price">$75<span>/ per month*</span></div>
+                        <div class="pbx-plan-annual">Save 10% - $810/year</div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfX9dCZ4ORDBXUnhKk4b0Nvd-EfPZasC6ysrTKGPUjc5qYreA/viewform" target="_blank" class="pbx-plan-button">GET THIS PLAN</a>
+                    <div class="pbx-plan-description">
+                        Just getting started? The small Cloud PBX is the best choice for SOHO environments.
+                    </div>
+                    <div class="pbx-plan-concurrent">**Up to 8 concurrent calls.</div>
+                </div>
+                <div class="pbx-plan-card">
+                    <div class="pbx-plan-header">
+                        <div class="pbx-plan-name">Medium</div>
+                        <div class="pbx-plan-price">$119<span>/ per month*</span></div>
+                        <div class="pbx-plan-annual">Save 10% - $1,285/year</div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfX9dCZ4ORDBXUnhKk4b0Nvd-EfPZasC6ysrTKGPUjc5qYreA/viewform" target="_blank" class="pbx-plan-button">GET THIS PLAN</a>
+                    <div class="pbx-plan-description">
+                        Need additional performance? The medium Cloud PBX is the right choice for your business.
+                    </div>
+                    <div class="pbx-plan-concurrent">**Up to 40 concurrent calls.</div>
+                </div>
+                <div class="pbx-plan-card">
+                    <div class="pbx-plan-header">
+                        <div class="pbx-plan-name">Large</div>
+                        <div class="pbx-plan-price">$199<span>/ per month*</span></div>
+                        <div class="pbx-plan-annual">Save 10% - $2,149/year</div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfX9dCZ4ORDBXUnhKk4b0Nvd-EfPZasC6ysrTKGPUjc5qYreA/viewform" target="_blank" class="pbx-plan-button">GET THIS PLAN</a>
+                    <div class="pbx-plan-description">
+                        Operating a bigger call center? The large Cloud PBX was designed for enterprise-level call volumes.
+                    </div>
+                    <div class="pbx-plan-concurrent">**Up to 80 concurrent calls.</div>
+                </div>
+                <div class="pbx-plan-card">
+                    <div class="pbx-plan-header">
+                        <div class="pbx-plan-name">Extra-Large</div>
+                        <div class="pbx-plan-price">$349<span>/ per month*</span></div>
+                        <div class="pbx-plan-annual">Save 10% - $3,769/year</div>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfX9dCZ4ORDBXUnhKk4b0Nvd-EfPZasC6ysrTKGPUjc5qYreA/viewform" target="_blank" class="pbx-plan-button">GET THIS PLAN</a>
+                    <div class="pbx-plan-description">
+                        Want more communication power? The extra-large Cloud PBX connects you on an even wider scale.
+                    </div>
+                    <div class="pbx-plan-concurrent">**Up to 120 concurrent calls.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="plans">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our VoIP Plans</h2>
+                <p>Choose the perfect plan for your communication needs</p>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card standard">
+                    <div class="plan-header">
+                        <div class="plan-name">Standard Plan</div>
+                        <div class="plan-price">$9.99<span>/month per user</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Basic call quality</li>
+                        <li><i class="fas fa-check"></i> Standard features</li>
+                        <li><i class="fas fa-check"></i> Calls to 50 countries</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                    </ul>
+                    <a href="https://docs.google.com/spreadsheets/d/15jVmJOYjHPSYJLQnxA4yeJ5fBrw_LESr7z0TIzPcTQg/edit?usp=sharing" target="_blank" class="btn">Rates</a>
+                </div>
+                <div class="plan-card premium">
+                    <div class="plan-header">
+                        <div class="plan-name">Premium Plan</div>
+                        <div class="plan-price">$19.99<span>/month</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Calls to 100 countries</li>
+                        <li><i class="fas fa-check"></i> HD call quality</li>
+                        <li><i class="fas fa-check"></i> Advanced features</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                    </ul>
+                    <a href="https://docs.google.com/spreadsheets/d/17LeHQSR6jpvNZVsRiAhotEMB4ItymN3Fmqa0bWZAE8w/edit?usp=sharing" target="_blank" class="btn">Rates</a>
+                </div>
+                <div class="plan-card platinum">
+                    <div class="plan-header">
+                        <div class="plan-name">Platinum Plan</div>
+                        <div class="plan-price">$29.99<span>/month</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Calls to 190+ countries</li>
+                        <li><i class="fas fa-check"></i> Crystal-clear HD quality</li>
+                        <li><i class="fas fa-check"></i> Premium features</li>
+                        <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                    </ul>
+                    <a href="https://docs.google.com/spreadsheets/d/10ZffoibimILTRMbZLtzvjrMWrM3nQLkO8o8SLOnOZiM/edit?usp=sharing" target="_blank" class="btn">Rates</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose VoIP Cat?</h2>
+                <p>Industry-leading features for seamless communication</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Global Coverage</h3>
+                    <p>Connect with anyone, anywhere in the world with our extensive network spanning over 190 countries.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Crystal Clear Quality</h3>
+                    <p>Experience premium HD voice quality with our advanced VoIP technology and optimized network infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Affordable Pricing</h3>
+                    <p>Get enterprise-grade VoIP services at competitive prices without compromising on quality or reliability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available around the clock to assist you with any questions or issues.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Secure & Reliable</h3>
+                    <p>Enterprise-grade security and 99.9% uptime guarantee ensure your communications are always protected.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Easy Integration</h3>
+                    <p>Seamlessly integrate with your existing systems and workflows with our flexible API and compatibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Hear from businesses that transformed their communication with VoIP Cat</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>VoIP Cat has revolutionized our international communications. The call quality is exceptional, and the pricing is unbeatable. We've saved over 60% on our communication costs!</p>
+                    <div class="client-info">
+                        <div class="client-avatar">MJ</div>
+                        <div>
+                            <h4>Michael Johnson</h4>
+                            <p>CEO, TechGlobal Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>As a multinational company, we needed a reliable VoIP provider that could handle our complex communication needs. VoIP Cat delivered beyond our expectations with their Platinum plan.</p>
+                    <div class="client-info">
+                        <div class="client-avatar">SL</div>
+                        <div>
+                            <h4>Sarah Lee</h4>
+                            <p>Operations Director, Nexus Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>The customer support at VoIP Cat is outstanding. Any time we've had an issue, it's been resolved quickly and professionally. Their Diamond plan offers the perfect balance of features and value.</p>
+                    <div class="client-info">
+                        <div class="client-avatar">DR</div>
+                        <div>
+                            <h4>David Roberts</h4>
+                            <p>IT Manager, Innovate Corp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Have questions? Our team is ready to assist you</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Our Location</h3>
+                            <p>251 Mercer St, New York, NY 10012, USA</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Call or WhatsApp Us</h3>
+                            <p><a href="tel:+201557649136" style="color:inherit;text-decoration:none;">+201557649136</a></p>
+                            <p><a href="https://wa.me/201557649136" target="_blank" style="color:inherit;text-decoration:none;">+201557649136 (WhatsApp)</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p><a href="mailto:sales.voipcat@gmail.com" style="color:inherit;text-decoration:none;">sales.voipcat@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Friday: 9AM - 8PM</p>
+                            <p>Saturday: 10AM - 4PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="+201557649136">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fas fa-cat"></i>
+                        <span>VoIP Cat</span>
+                    </div>
+                    <p>Providing reliable, high-quality VoIP solutions to businesses and individuals worldwide for over 10 years.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#cloud-pbx">Cloud PBX</a></li>
+                        <li><a href="#plans">Our Plans</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Business VoIP</a></li>
+                        <li><a href="#">Residential VoIP</a></li>
+                        <li><a href="#">International Calling</a></li>
+                        <li><a href="#">Virtual Numbers</a></li>
+                        <li><a href="#">Call Center Solutions</a></li>
+                        <li><a href="#">API Integration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for offers & updates.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your email address" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 VoIP Cat. All rights reserved. | Designed with <i class="fas fa-heart"></i> for seamless communication</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201557649136" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chat Toggle Button -->
+    <div class="chat-toggle" id="chatToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget" style="display:none;">
+        <div class="chat-header" id="chatHeader">
+            <h3>VoIP Cat Support</h3>
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be added here -->
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // === Background Bubbles ===
+            const background = document.getElementById('background-animation');
+            const bubbleCount = 20;
+            for (let i = 0; i < bubbleCount; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+                const size = Math.random() * 80 + 20;
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+                bubble.style.left = `${Math.random() * 100}%`;
+                bubble.style.top = `${Math.random() * 100}%`;
+                const duration = Math.random() * 15 + 10;
+                bubble.style.animationDuration = `${duration}s`;
+                const delay = Math.random() * 5;
+                bubble.style.animationDelay = `${delay}s`;
+                background.appendChild(bubble);
+            }
+
+            // === Smooth Scrolling ===
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // === ✅ FIXED CHAT & WHATSAPP INTEGRATION ===
+            const chatToggle = document.getElementById('chatToggle');
+            const chatWidget = document.getElementById('chatWidget');
+            const chatHeader = document.getElementById('chatHeader');
+            const chatMessages = document.getElementById('chatMessages');
+            const chatInput = document.getElementById('chatInput');
+
+            let chatInitialized = false;
+
+            // Toggle chat visibility
+            function toggleChat() {
+                if (chatWidget.style.display === 'none' || chatWidget.style.display === '') {
+                    chatWidget.style.display = 'flex';
+                    if (!chatInitialized) {
+                        appendMessage("Hello! 👋 Welcome to VoIP Cat. How can I assist you today?", "agent");
+                        setTimeout(showMainMenu, 1000);
+                        chatInitialized = true;
+                    }
+                } else {
+                    chatWidget.style.display = 'none';
+                }
+            }
+
+            chatToggle.addEventListener('click', toggleChat);
+            chatHeader.addEventListener('click', toggleChat);
+
+            // Build interactive buttons
+            function appendOptionMessage(text, value) {
+                const btn = document.createElement('button');
+                btn.className = 'chat-option-btn';
+                btn.textContent = text;
+                btn.onclick = () => {
+                    appendMessage(text, 'user');
+                    processUserInput(value, true);
+                };
+                chatMessages.appendChild(btn);
+            }
+
+            function showMainMenu() {
+                appendMessage("Please select an option:", "agent");
+                appendOptionMessage("1. 📦 Cloud PBX Solutions", "cloudpbx");
+                appendOptionMessage("2. 📞 SIP Trunk / VoIP Plans", "siptrunk");
+                appendOptionMessage("3. 💬 Live Support (WhatsApp)", "support");
+                scrollToBottom();
+            }
+
+            // Handle input
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && this.value.trim()) {
+                    appendMessage(this.value, 'user');
+                    processUserInput(this.value.toLowerCase());
+                    this.value = '';
+                }
+            });
+
+            function processUserInput(input, isOption = false) {
+                const lower = input.toLowerCase().trim();
+
+                if (lower === '1' || lower.includes('cloud') || isOption && input === 'cloudpbx') {
+                    appendMessage("📦 **Cloud PBX Solutions** — Choose your business size:", "agent");
+                    appendOptionMessage("1. Small Business (≤8 calls)", "small");
+                    appendOptionMessage("2. Medium Business (≤40 calls)", "medium");
+                    appendOptionMessage("3. Large Business (≤80 calls)", "large");
+                    appendOptionMessage("4. Extra-Large (≤120 calls)", "extralarge");
+                    
+                } else if (lower === '2' || lower.includes('sip') || lower.includes('voip') || lower.includes('plan') || isOption && input === 'siptrunk') {
+                    appendMessage("📞 **SIP Trunk / VoIP Plans** — Select your plan:", "agent");
+                    appendOptionMessage("1. Standard Plan ($9.99/user)", "standard");
+                    appendOptionMessage("2. Premium Plan ($19.99)", "premium");
+                    appendOptionMessage("3. Platinum Plan ($29.99)", "platinum");
+                    
+                } else if (lower === '3' || lower.includes('support') || lower.includes('whatsapp') || isOption && input === 'support') {
+                    appendMessage("💬 Opening WhatsApp chat with VoIP Cat support...", "agent");
+                    setTimeout(() => {
+                        // ✅ WORKING WHATSAPP LINK
+                        window.open('https://wa.me/201557649136?text=Hello%20VoIP%20Cat,%20I%20need%20assistance.', '_blank');
+                        appendMessage("✅ WhatsApp opened! Our team will assist you shortly. 📲", "agent");
+                    }, 1000);
+                    
+                } else if (input === 'small' || input === 'medium' || input === 'large' || input === 'extralarge') {
+                    const plans = {
+                        'small': 'Small Business',
+                        'medium': 'Medium Business',
+                        'large': 'Large Business',
+                        'extralarge': 'Extra-Large Business'
+                    };
+                    appendMessage(`✅ **${plans[input]} PBX** selected.\nOpening pricing form...`, "agent");
+                    setTimeout(() => {
+                        window.open('https://docs.google.com/forms/d/e/1FAIpQLSfX9dCZ4ORDBXUnhKk4b0Nvd-EfPZasC6ysrTKGPUjc5qYreA/viewform', '_blank');
+                    }, 800);
+                    
+                } else if (input === 'standard' || input === 'premium' || input === 'platinum') {
+                    const plans = {
+                        'standard': 'Standard Plan',
+                        'premium': 'Premium Plan',
+                        'platinum': 'Platinum Plan'
+                    };
+                    appendMessage(`✅ **${plans[input]}** selected.\nOpening rate sheet...`, "agent");
+                    setTimeout(() => {
+                        const urls = {
+                            'standard': 'https://docs.google.com/spreadsheets/d/15jVmJOYjHPSYJLQnxA4yeJ5fBrw_LESr7z0TIzPcTQg/edit?usp=sharing',
+                            'premium': 'https://docs.google.com/spreadsheets/d/17LeHQSR6jpvNZVsRiAhotEMB4ItymN3Fmqa0bWZAE8w/edit?usp=sharing',
+                            'platinum': 'https://docs.google.com/spreadsheets/d/10ZffoibimILTRMbZLtzvjrMWrM3nQLkO8o8SLOnOZiM/edit?usp=sharing'
+                        };
+                        window.open(urls[input], '_blank');
+                    }, 800);
+                    
+                } else {
+                    appendMessage("❓ I didn't understand. Please select:\n1. Cloud PBX\n2. SIP Trunk\n3. Support", "agent");
+                }
+                scrollToBottom();
+            }
+
+            function appendMessage(text, sender) {
+                const bubble = document.createElement('div');
+                bubble.className = `chat-bubble ${sender}`;
+                bubble.textContent = text;
+                chatMessages.appendChild(bubble);
+                scrollToBottom();
+            }
+
+            function scrollToBottom() {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
